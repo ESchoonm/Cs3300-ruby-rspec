@@ -77,26 +77,36 @@ end
 class BookInStock
 # YOUR CODE HERE
 
-#constructor
-def initialize(isbnNumber, pr)
-  @isbn = isbnNumber
-  @price = pr
-  @price_as_string = "$100"
-end
+  #constructor
+  def initialize(isbnNumber, pr)
+    #https://stackoverflow.com/questions/1485114/ruby-constructors-and-exceptions
+    #link is how I came up with this \/. 
+    #raise argumentError, if the isbn is null, or invalid price
+    raise ArgumentError if isbnNumber.length == 0 or pr <= 0
+    @isbn = isbnNumber #initilizes isbn 
+    @price = pr #initilizes price
+  end
 
-def isbn
-  @isbn
-end
-def price
-  @price
-end
-def isbn=(newisbn)
-  @isbn = newisbn
-end
-def price=(newprice)
-  @price = newprice
-end
+  #getters
+  def isbn
+    @isbn
+  end
+  def price
+    @price
+  end
 
+  #setters
+  def isbn=(newisbn)
+    @isbn = newisbn
+  end
+  def price=(newprice)
+    @price = newprice
+  end
 
+  #price as a string method
+  def price_as_string
+    #returns a string with 2 decimal places.
+  "$%.2f" % [price]
+  end
 
 end
