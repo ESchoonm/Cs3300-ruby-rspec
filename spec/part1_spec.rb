@@ -5,16 +5,23 @@ require_relative '../lib/ruby_intro'
 describe 'Ruby intro part 1' do
   describe '#sum' do
 
-    it 'returns correct sum [1 point]', points: 1 do
+    #checks the method sum, to make sure the correct sum is given
+    it 'returns correct sum [1 point]', points: 1 do 
+      #names this test, 'returns correct sum [1 point]'
+      #expect command, tests the given condition, and to means equal to the following
       expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
+      #output of sum must be an integer
       expect(sum([1, 2, 3, 4, 5])).to eq(15)
+      #expect output to equal 15
       expect(sum([1, 2, 3, 4, -5])).to eq(5)
+      #expect sum to equal 5
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
+      #expect sum to -90
     end
 
     it 'works on the empty array [2 points]', points: 2 do
-      expect { sum([]) }.not_to raise_error
-      expect(sum([])).to be_zero
+      expect { sum([]) }.not_to raise_error #checks that no error is raised
+      expect(sum([])).to be_zero #if empty array, returns 0
     end
   end
 
