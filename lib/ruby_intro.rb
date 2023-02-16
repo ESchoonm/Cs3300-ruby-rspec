@@ -49,19 +49,54 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  "Hello, " + name
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+ 
+  #checks the string, for not null, the first character is not a vowel, and the first character
+  #is still a letter of the alphabet
+  if s.length != 0 and s[0].match(/[^aeiou]/i) and s[0].match(/[a-z]/i)
+    return true
+  else
+    #if not, return false
+    return false
+  end
+
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+
+  #optional exercise
 end
 
 # Part 3
 
 class BookInStock
 # YOUR CODE HERE
+
+#constructor
+def initialize(isbnNumber, pr)
+  @isbn = isbnNumber
+  @price = pr
+  @price_as_string = "$100"
 end
-puts "#{sum_to_n?([1,2,3,4,5], 7)}"
+
+def isbn
+  @isbn
+end
+def price
+  @price
+end
+def isbn=(newisbn)
+  @isbn = newisbn
+end
+def price=(newprice)
+  @price = newprice
+end
+
+
+
+end
